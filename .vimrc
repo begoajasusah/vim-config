@@ -7,3 +7,5 @@ runtime! custom_config/*.vim
 " for git, add spell checking and automatic wrapping at 72 columns
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+set cursorline
+set cursorcolumn
