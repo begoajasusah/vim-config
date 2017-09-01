@@ -12,15 +12,11 @@
   NeoBundle "tomtom/tcomment_vim"
   NeoBundle "tpope/vim-endwise"
   NeoBundle "tpope/vim-fugitive"
-  NeoBundle "tpope/vim-haml"
-  NeoBundle "tpope/vim-rake"
   NeoBundle "tpope/vim-repeat"
   NeoBundle "vim-ruby/vim-ruby"
   NeoBundle "vim-scripts/L9"
   NeoBundle "vim-scripts/matchit.zip"
-  NeoBundle "vim-scripts/ruby-matchit"
   NeoBundle "tpope/vim-abolish"
-  NeoBundle "leafgarland/typescript-vim"
 
  " Vim airline configs
   NeoBundle 'bling/vim-airline'
@@ -47,13 +43,6 @@
   let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 
-" Dash Searching"
-  NeoBundle "rizzatti/funcoo.vim"
-  NeoBundle "rizzatti/dash.vim"
-    nmap <Leader>qs <Plug>DashSearch
-    nmap <Leader>qa <Plug>DashGlobalSearch
-
-
 " CtrlP
   NeoBundle "kien/ctrlp.vim"
     nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
@@ -71,21 +60,6 @@
   NeoBundle "slim-template/vim-slim"
     au BufNewFile,BufRead *.slim set filetype=slim
 
-" Less
-  NeoBundle "groenewege/vim-less"
-    au BufNewFile,BufRead *.less set filetype=less
-
-" Handlebars, Mustache, and Friends
-  NeoBundle "mustache/vim-mustache-handlebars"
-  au  BufNewFile,BufRead *.mustache,*.handlebars,*.hbs,*.hogan,*.hulk,*.hjs set filetype=html syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
-
-" Stylus
-  NeoBundle "wavded/vim-stylus"
-    au BufNewFile,BufRead *.styl set filetype=stylus
-
-" Coffee script
-  NeoBundle "kchmck/vim-coffee-script"
-    au BufNewFile,BufRead *.coffee set filetype=coffee
 
 " AG aka The Silver Searcher
   NeoBundle 'rking/ag.vim'
@@ -189,24 +163,6 @@
     let g:surround_61 = "<%= \r %>"
 
 
-" Clojure Highlighting"
-  NeoBundle "tpope/vim-fireplace"
-  NeoBundle "tpope/vim-classpath"
-  NeoBundle "guns/vim-clojure-static"
-  NeoBundle "vim-scripts/paredit.vim"
-  NeoBundle "losingkeys/vim-niji"
-  autocmd BufNewFile,BufRead *.clj set filetype=clojure
-  autocmd BufNewFile,BufRead *.edn set filetype=clojure
-  autocmd BufNewFile,BufRead *.cljs set filetype=clojure
-  autocmd BufNewFile,BufRead *.cljx set filetype=clojure
-
-  let g:paredit_leader= '\'
-  let vimclojure#ParenRainbow  = 1
-
-" Jade Highlighting"
-  NeoBundle "digitaltoad/vim-jade"
-  autocmd BufNewFile,BufRead *.jade set filetype=jade
-
 " Scala Highlighting"
   NeoBundle "derekwyatt/vim-scala"
   autocmd BufNewFile,BufRead *.scala set filetype=scala
@@ -218,15 +174,6 @@
 
 " Rust!
   NeoBundle 'wting/rust.vim'
-
-" Easy async RSpec running
-  NeoBundle 'thoughtbot/vim-rspec'
-  NeoBundle "tpope/vim-dispatch"
-  let g:rspec_command = "Dispatch rspec --format=progress --no-profile {spec}"
-  nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
-  nmap <Leader>rn :wa<CR> :call RunNearestSpec()<CR>
-  nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
-  nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
 
 " Elm support -- https://elm-lang.org
   NeoBundle "ElmCast/elm-vim"
@@ -246,12 +193,11 @@
   nmap <Leader>ed <Plug>(elm-show-docs)
   nmap <Leader>ew <Plug>(elm-browse-docs)
 
-
 " React JSX support
   NeoBundle "mxw/vim-jsx"
   let g:jsx_ext_required = 0
 
 " Vue Single File Component support
   NeoBundle "posva/vim-vue"
-  
+
  call neobundle#end()
