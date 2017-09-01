@@ -79,6 +79,10 @@
   set splitright
   set splitbelow
 
+" set cursor line and column
+  set cursorline
+  set cursorcolumn
+
 " don't beep for errors
   set visualbell
 
