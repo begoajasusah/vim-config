@@ -23,8 +23,8 @@ The Windows version of the Vim configuration uses rake (for installation) git (f
 Windows users: be sure to use **RailsInstaller** > **Command Prompt with Ruby and Rails** to perform these installation steps instead of the normal command prompt.
 
 Manual Install:
-1. `git clone git@github.com:satrionugroho/vim-config.git`
-2. `cd vim-config`
+1. `git clone git@github.com:satrionugroho/vim-config.git ~/.vim-config`
+2. `cd ~/.vim-config`
 3. `rake` (This will symlink the necessary files to your home directory, asking for permission before clobbering anything.)
 4. `vim` (or in Windows: `gvim`)
 5. `:NeoBundleClean` (if you have previously used this EdgeCase Vim config)
