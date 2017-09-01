@@ -1,4 +1,4 @@
-# EdgeCase Vim Config
+# Vim Config
 
 You should give it a try.
 
