@@ -194,7 +194,7 @@
   NeoBundle "tpope/vim-classpath"
   NeoBundle "guns/vim-clojure-static"
   NeoBundle "vim-scripts/paredit.vim"
-  NeoBundle "amdt/vim-niji"
+  NeoBundle "losingkeys/vim-niji"
   autocmd BufNewFile,BufRead *.clj set filetype=clojure
   autocmd BufNewFile,BufRead *.edn set filetype=clojure
   autocmd BufNewFile,BufRead *.cljs set filetype=clojure
