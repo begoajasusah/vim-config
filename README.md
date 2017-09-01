@@ -22,12 +22,20 @@ The Windows version of the Vim configuration uses rake (for installation) git (f
 
 Windows users: be sure to use **RailsInstaller** > **Command Prompt with Ruby and Rails** to perform these installation steps instead of the normal command prompt.
 
-1. `git clone git@github.com:edgecase/vim-config.git`
+Manual Install:
+1. `git clone git@github.com:satrionugroho/vim-config.git`
 2. `cd vim-config`
 3. `rake` (This will symlink the necessary files to your home directory, asking for permission before clobbering anything.)
 4. `vim` (or in Windows: `gvim`)
 5. `:NeoBundleClean` (if you have previously used this EdgeCase Vim config)
 6. `:NeoBundleInstall` (This will clone and install all of the plugins from github.)
+
+Easy Install:
+## With WGET
+`sh -c "$(wget https://raw.githubusercontent.com/satrionugroho/vim-config/master/install.sh -O -)"`
+
+## With CURL
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/satrionugroho/vim-config/master/install.sh)"`
 
 ## Customizing
 
@@ -329,15 +337,6 @@ one level).
 Improves `vim` ability to jump back and forth between matching pairs of
 opening and ending items with `%`.
 
-
-## Gist-vim
-
-Nice [gist integration](https://github.com/mattn/gist-vim) by mattn.
-Requires exporting your `GITHUB_TOKEN` and `GITHUB_USER` as environment
-variables or setup your [GitHub token config](http://help.github.com/git-email-settings/).
-
-Try `:Gist`, `:Gist -p` and visual blocks.
-
 ## ZoomWin
 
 When working with split windows, ZoomWin lets you zoom into a window and
@@ -414,3 +413,4 @@ If you are going to contribute to our config, please make sure you are not overr
 Also remember that we have a custom_config directory if you want to make a change for just yourself.
 
 All PRs **must** be reviewed by at least one other person before being merged.
+
