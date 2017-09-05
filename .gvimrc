@@ -28,7 +28,11 @@
 
 " set default font
 " https://github.com/Lokaltog/powerline-fonts
-  set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h15
+  if has('mac') || has('win32')
+    set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h15
+  else
+    set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 10
+  endif
 
 " initial window size
   set lines=45 columns=120
