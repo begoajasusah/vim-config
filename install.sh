@@ -17,7 +17,7 @@ if [ -d $VIM_INSTALL_DIR ]; then
 fi
 
 git clone $VIM_REPO $VIM_INSTALL_DIR
-git clone $NEOBUNDLE_URL $VIM_INSTALL_DIR/bundle/neobundle.vim
+git clone $NEOBUNDLE_URL $VIM_INSTALL_DIR/.vim/bundle/neobundle.vim
 cd $VIM_INSTALL_DIR
 
 # create symlinks
