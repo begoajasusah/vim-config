@@ -42,7 +42,6 @@
   NeoBundle "ervandew/supertab"
   let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
-
 " CtrlP
   NeoBundle "kien/ctrlp.vim"
     nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
@@ -59,7 +58,6 @@
 " Slim
   NeoBundle "slim-template/vim-slim"
     au BufNewFile,BufRead *.slim set filetype=slim
-
 
 " AG aka The Silver Searcher
   NeoBundle 'rking/ag.vim'
@@ -91,6 +89,24 @@
     nmap <leader>g :NERDTreeToggle<CR>
     nmap <leader>G :NERDTreeFind<CR>
 
+  NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+  let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+  let g:NERDTreeShowIgnoredStatus = 1
+
+  NeoBundle 'mhinz/vim-signify'
+  NeoBundle 'airblade/vim-gitgutter'
 
 " Tabular for aligning text
   NeoBundle "godlygeek/tabular"
@@ -126,7 +142,6 @@
     vmap <C-Up> [egv
     vmap <C-Down> ]egv
 
-
 " Syntastic for catching syntax errors on save
   NeoBundle "scrooloose/syntastic"
     let g:syntastic_enable_signs=1
@@ -134,24 +149,12 @@
     " syntastic is too slow for haml and sass
     let g:syntastic_mode_map = { 'mode': 'active',
                                \ 'active_filetypes': [],
-                               \ 'passive_filetypes': ['haml','scss','sass','vue'] }
+                               \ 'passive_filetypes': ['haml','scss','sass','vue', 'java'] }
 
 
 " gundo for awesome undo tree visualization
   NeoBundle "sjl/gundo.vim"
     map <Leader>h :GundoToggle<CR>
-
-
-" rails.vim, nuff' said
-  NeoBundle "tpope/vim-rails"
-    map <Leader>oc :Rcontroller<Space>
-    map <Leader>ov :Rview<Space>
-    map <Leader>om :Rmodel<Space>
-    map <Leader>oh :Rhelper<Space>
-    map <Leader>oj :Rjavascript<Space>
-    map <Leader>os :Rstylesheet<Space>
-    map <Leader>oi :Rintegration<Space>
-
 
 " surround for adding surround 'physics'
   NeoBundle "tpope/vim-surround"
@@ -162,10 +165,6 @@
     " = to surround with output erb tag
     let g:surround_61 = "<%= \r %>"
 
-
-" Scala Highlighting"
-  NeoBundle "derekwyatt/vim-scala"
-  autocmd BufNewFile,BufRead *.scala set filetype=scala
 
 " Elixir plugin
   NeoBundle "elixir-lang/vim-elixir"
@@ -199,5 +198,7 @@
 
 " Vue Single File Component support
   NeoBundle "posva/vim-vue"
+  " REPL
+  nmap <Leader>er :w<CR> :call ElmRepl()<CR>
 
  call neobundle#end()
