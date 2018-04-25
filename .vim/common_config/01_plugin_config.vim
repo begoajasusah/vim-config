@@ -201,4 +201,6 @@
   " REPL
   nmap <Leader>er :w<CR> :call ElmRepl()<CR>
 
+  NeoBundle 'chase/vim-ansible-yaml'
+
  call neobundle#end()
