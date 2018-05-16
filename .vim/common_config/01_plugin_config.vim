@@ -15,8 +15,6 @@
   NeoBundle "tpope/vim-repeat"
   NeoBundle "vim-ruby/vim-ruby"
   NeoBundle "vim-scripts/L9"
-  NeoBundle "vim-scripts/matchit.zip"
-  NeoBundle "tpope/vim-abolish"
 
  " Vim airline configs
   NeoBundle 'bling/vim-airline'
@@ -35,21 +33,18 @@
       \ '' : 'S',
       \ }
 
-" Easy motion config
-  NeoBundle "Lokaltog/vim-easymotion"
+" Rails
+  NeoBundle "tpope/vim-rails"
+
+" Try to use fzf
+  NeoBundle "junegunn/fzf"
+  NeoBundle "junegunn/fzf.vim"
+    let g:fzf_layout = { 'down': '~30%' }
+    nnoremap <Leader>t :<C-U>FZF<CR>
 
 "Supertab code completion"
   NeoBundle "ervandew/supertab"
   let g:SuperTabContextDefaultCompletionType = "<c-n>"
-
-" CtrlP
-  NeoBundle "kien/ctrlp.vim"
-    nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
-    nnoremap <Leader>t :<C-U>CtrlP<CR>
-    nnoremap <Leader>T :<C-U>CtrlPTag<CR>
-
-    " respect the .gitignore
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
 " Go
   NeoBundle "fatih/vim-go"
@@ -67,13 +62,6 @@
     nmap gn :cnext<CR>
     nmap gp :cprev<CR>
     nmap gl :cwindow<CR>
-
-
-" Tagbar for navigation by tags using CTags
-  NeoBundle "majutsushi/tagbar"
-    let g:tagbar_autofocus = 1
-    map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-    map <Leader>. :TagbarToggle<CR>
 
 " Markdown syntax highlighting
   NeoBundle "tpope/vim-markdown"
@@ -142,16 +130,6 @@
     vmap <C-Up> [egv
     vmap <C-Down> ]egv
 
-" Syntastic for catching syntax errors on save
-  NeoBundle "scrooloose/syntastic"
-    let g:syntastic_enable_signs=1
-    let g:syntastic_quiet_messages = {'level': 'warning'}
-    " syntastic is too slow for haml and sass
-    let g:syntastic_mode_map = { 'mode': 'active',
-                               \ 'active_filetypes': [],
-                               \ 'passive_filetypes': ['haml','scss','sass','vue', 'java'] }
-
-
 " gundo for awesome undo tree visualization
   NeoBundle "sjl/gundo.vim"
     map <Leader>h :GundoToggle<CR>
@@ -165,6 +143,14 @@
     " = to surround with output erb tag
     let g:surround_61 = "<%= \r %>"
 
+" consider to use ALE
+  NeoBundle 'w0rp/ale'
+    let g:ale_lint_on_text_changed = 'never'
+    let g:ale_lint_on_enter = 0
+    let g:ale_linters = {
+    \   'ruby': ['rubocop', 'ruby', 'brakeman', 'rails_best_practices'],
+    \   'elixir': ['credo', 'dialyxir']
+    \}
 
 " Elixir plugin
   NeoBundle "elixir-lang/vim-elixir"
