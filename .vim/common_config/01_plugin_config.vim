@@ -151,6 +151,7 @@
     \   'ruby': ['rubocop', 'ruby', 'brakeman', 'rails_best_practices'],
     \   'elixir': ['credo', 'dialyxir']
     \}
+    let g:ale_ruby_rubocop_options = '--rails'
 
 " Elixir plugin
   NeoBundle "elixir-lang/vim-elixir"
