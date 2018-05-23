@@ -14,7 +14,6 @@
   NeoBundle "tpope/vim-fugitive"
   NeoBundle "tpope/vim-repeat"
   NeoBundle "vim-ruby/vim-ruby"
-  NeoBundle "vim-scripts/L9"
 
  " Vim airline configs
   NeoBundle 'bling/vim-airline'
@@ -36,11 +35,14 @@
 " Rails
   NeoBundle "tpope/vim-rails"
 
-" Try to use fzf
-  NeoBundle "junegunn/fzf"
-  NeoBundle "junegunn/fzf.vim"
-    let g:fzf_layout = { 'down': '~30%' }
-    nnoremap <Leader>t :<C-U>FZF<CR>
+" CtrlP
+  NeoBundle "kien/ctrlp.vim"
+    nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
+    nnoremap <Leader>t :<C-U>CtrlP<CR>
+    nnoremap <Leader>T :<C-U>CtrlPTag<CR>
+
+    " respect the .gitignore
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
 "Supertab code completion"
   NeoBundle "ervandew/supertab"
@@ -115,11 +117,6 @@
     " shortcut to align text with Tabular
     map <Leader>a :Tabularize<space>
 
-" ZoomWin to fullscreen a particular buffer without losing others
-  NeoBundle "vim-scripts/ZoomWin"
-    map <Leader>z :ZoomWin<CR>
-
-
 " Unimpaired for keymaps for quicky manipulating lines and files
   NeoBundle "tpope/vim-unimpaired"
     " Bubble single lines
@@ -129,10 +126,6 @@
     " Bubble multiple lines
     vmap <C-Up> [egv
     vmap <C-Down> ]egv
-
-" gundo for awesome undo tree visualization
-  NeoBundle "sjl/gundo.vim"
-    map <Leader>h :GundoToggle<CR>
 
 " surround for adding surround 'physics'
   NeoBundle "tpope/vim-surround"
@@ -187,7 +180,5 @@
   NeoBundle "posva/vim-vue"
   " REPL
   nmap <Leader>er :w<CR> :call ElmRepl()<CR>
-
-  NeoBundle 'chase/vim-ansible-yaml'
 
  call neobundle#end()
